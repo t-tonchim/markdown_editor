@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
+import MarkDownEditorUI from './components/MarkdownEditorUI'
 
-render(<div>Hello, Electron and React JSX</div>,
+render(<MarkDownEditorUI />,
   document.getElementById('app'))
 
