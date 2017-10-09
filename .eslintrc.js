@@ -7,6 +7,7 @@ module.exports = {
   },
   'extends': 'eslint:recommended',
   'parserOptions': {
+    'ecmaVersion': 2017,
     'ecmaFeatures': {
       'experimentalObjectRestSpread': true,
       'jsx': true
@@ -17,6 +18,8 @@ module.exports = {
     'react'
   ],
   'rules': {
+    'no-debugger': 0,
+    'no-console': 0,
     'indent': [
       'error',
       2
