@@ -30,6 +30,6 @@ class PDFWindow extends EventEmitter {
   }
 }
 
-export default function createPDFWindow(contents, fileManager){
-  return new PDFWindow(contents, fileManager)
+export default function createPDFWindow(contents){
+  return new PDFWindow(contents)
 }
