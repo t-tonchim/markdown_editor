@@ -6,7 +6,7 @@ marked.setOptions({ sanitize: true })
 
 export default function Previewer(props){
   return (
-    <div id="Previewer" className={`${props.className} ${style.previewer}`}>
+    <div id="previewer" className={`${props.className} ${style.previewer}`}>
       <span dangerouslySetInnerHTML={{ __html: marked(props.value) }} />
     </div>
   )
