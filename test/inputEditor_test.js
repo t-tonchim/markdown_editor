@@ -2,6 +2,7 @@ import assert from 'assert'
 import createApplication from './createApplication'
 import EditorPage from './editor.page'
 import { JSDOM } from 'jsdom'
+import { capturePage, reportLog } from './helper'
 
 describe('エディタ入力のテスト', function() {
   this.timeout(10000)
@@ -12,7 +13,13 @@ describe('エディタ入力のテスト', function() {
     return app.start()
   })
 
-  afterEach(() => {
+  afterEach(function() {
+    if (this.currentTest.state === 'failed') {
+      return Promise.all([
+        capturePage(app, this.currentTest.title),
+        reportLog(app, this.currentTest.title)
+      ]).then(() => app.stop())
+    }
     return app.stop()
   })
 
